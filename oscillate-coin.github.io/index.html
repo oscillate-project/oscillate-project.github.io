@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Oscillate - An easy and honest coin.</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<style>
+		ul {
+			list-style-type: none;
+		}
+		A {
+			text-decoration: none;
+		}
+	</style>
+
+</head>
+
+<!-- FETCHING JSON FOR STATS -->
+
+<script>
+	function updateNet() {
+		$.getJSON('http://oscillatepool.ml:8245/stats', function(data) {
+			var text = `${data.network.height}`;
+			var text = "Current Block Height: " + Math.round(data.network.height)
+			$(".mypanel1").html(text);
+			setTimeout(updateNet(), 100000);
+		});
+	}
+	setTimeout(updateNet(), 100000);
+</script>
+
+<script>
+	function updateNet2() {
+		$.getJSON('http://oscillatepool.ml:8245/stats', function(data) {
+			var text = `${data.network.difficulty}`;
+			var text = "Current Difficulty: " + Math.round(data.network.difficulty / 1000000) + " MH"
+			$(".mypanel2").html(text);
+			setTimeout(updateNet2(), 100000);
+		});
+	}
+	setTimeout(updateNet2(), 100000);
+</script>
+
+<script>
+	function updateNet3() {
+		$.getJSON('http://oscillatepool.ml:8245/stats', function(data) {
+			var text = `${data.pool.difficulty}`;
+			var text = "Network Hash: " + Math.round(data.network.difficulty / 60 / 1000) + " KH/s"
+			$(".mypanel3").html(text);
+			setTimeout(updateNet3(), 100000);
+		});
+	}
+	setTimeout(updateNet3(), 100000);
+</script>
+
+<!-- END FETCHING JSON FOR STATS -->
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+			<div class="logo"><img src="img/icon.ico" style="height:89px"></img></div>
+			<div class="content">
+				<div class="inner">
+					<h1>Oscillate (OSL)</h1>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#intro">SPECS</a></li>
+					<li><a href="#work">ABOUT</a></li>
+					<li><a href="#about">TRADE</a></li>
+					<li><a href="https://github.com/oscillate-coin/oscillate">GITHUB</a></li>
+					<li><a href="#mining">POOLS</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Main -->
+		<div id="main">
+			<!-- Intro -->
+			<article id="intro">
+				<center>
+					<h2 class="major">Network Specs</h2>
+				</center>
+				<center>
+					<ul>
+						<li>Coin Name: Oscillate</li>
+						<li>Ticker: OSL</li>
+						<li>Algorithm: cryptonight_turtle</li>
+						<li>Coin Type: POW</li>
+						<li>Max. Supply: 100,000,000,000.00</li>
+						<li>Difficulty Target: 60</li>
+						<li>Pre-Mine: 0</li>
+						<li>RPC port: 11246</li>
+						<li>P2P port: 11245</li>
+						<br>
+						<div class="mypanel1" style="font-size:22px"></div>
+						<br>
+						<div class="mypanel2" style="font-size:22px"></div>
+					</ul>
+				</center>
+			</article>
+
+			<!-- Work -->
+			<article id="work">
+				<center>
+					<h2 class="major">About OSL</h2>
+					<p>Oscillate [OSL] is an ASIC resistant fork of TurtleCoin, using the CryptoNight_Turtle algorithm. Quick transactions, privacy, Ease of use make this coin perfect for paying anyone, anywhere. Oscillate can also be mined on any windows or
+						Linux based PC, no matter how strong or weak!</p>
+					<br>
+					<p>If you do not know what TurtleCoin is, it is a fairly popular cryptonote coin, which is what this was forked from. Oscillate was forked from this code for a few reasons.</p>
+					<br>
+					<ul>
+						<li> 1. The code is updated frequently and is always supporting updates for operating systems. </li>
+						<br>
+						<li> 2. The code is lightweight and can be used on ARM devices. </li>
+						<br>
+						<li> 3. It is faster than the original cryptonote commit. </li>
+						<br>
+						<li> 4. An easy to use wallet is included with the release. </li>
+					</ul>
+				</center>
+			</article>
+
+			<!-- About -->
+
+			<article id="about" style="width: 1200px">
+				<center>
+					<h2 class="major"> <a href="https://tradecx.io/markets/osldoge"></a>Trade OSL</h2></a>
+					<iframe width="1000" height="500" src="https://chart.tradecx.io/?ticker=osldoge"></iframe>
+				</center>
+			</article>
+
+			<!-- Pools -->
+
+			<article id="mining" style="width: 1200px">
+				<center>
+					<h2 class="major">Known OSL Pools</h2></a>
+					<h3><div class="mypanel3"></div></h3>
+					<a href="http://oscillatepool.ml/">
+						<p>Official Oscillate pool</p>
+					<a href="https://osc.llama.horse/osc">
+						<p>Llama.Horse Pool</p>
+					<a href="https://osc.turbomine.co/">
+						<p>TurboMine Pool</p>
+					<a href="https://tlrmosc.turbomine.co/">
+						<p>TurboMine Pool (MERGED WITH TLRM)</p>
+					<a href="http://osc.line-pool.ru/">
+						<p>Line Pool </p>
+								
+				</center>
+				</center>
+			</article>
+		</div>
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy;<a href="https://twitter.com/CoinOscillate">Oscillate</a> <a href="https://twitter.com/FallenGrav1ty">FallenGravity</a>.</p>
+		</footer>
+	</div>
+	<!-- BG -->
+	<div id="bg"></div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
+</html>
