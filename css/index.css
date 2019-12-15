@@ -249,7 +249,7 @@ html {
   position: fixed;
   text-align: right;
   top: 0;
-  width: 15rem;
+  width: 12rem;
   z-index: 10000;
 }
 #sidebar > .inner {
