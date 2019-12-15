@@ -242,7 +242,7 @@ html {
   padding: 2.5em 2.5em 0.5em 2.5em;
   background: rgba(23, 183, 204, 0.85);
   cursor: default;
-  height: 100vh;
+  height: 90vh;
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -335,7 +335,7 @@ body.is-preload #sidebar nav ul li {
     left: 0;
     line-height: 6em;
     overflow: hidden;
-    padding: 0;
+    margin-bottom: 50em;
     text-align: center;
     top: 0;
     width: 100%;
@@ -373,6 +373,7 @@ body.is-preload #sidebar nav ul li {
   #sidebar nav a:after {
     background-image: none;
     background-color: white;
+    margin-bottom: 25%;
   }
 }
 @media screen and (max-width: 536px) {
@@ -381,5 +382,7 @@ body.is-preload #sidebar nav ul li {
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
+    margin-bottom: 2 rem;
+    padding-bottom: -350px;
   }
 }
