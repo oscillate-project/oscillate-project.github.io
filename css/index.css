@@ -233,6 +233,9 @@ html {
   body .container {
     width: 100%;
   }
+  body .about {
+    margin-top: 12rem;
+  }
   body .about h1 {
     font-size: 2rem;
   }
